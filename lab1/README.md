@@ -124,23 +124,17 @@ http://localhost:3000/unknown
 
 ## Screenshots
 
-Save screenshots of your working routes in the `screenshots/` folder.
-
 ### Home Route
-
-![Screenshot](./Screenshot%202026-10-18%20211536.png)
+![Home Screenshot](./screenshots/home.png)
 
 ### About Route
-
-![Screenshot](./Screenshot%202026-10-18%20211548.png)
+![About Screenshot](./screenshots/about.png)
 
 ### Time Route
-
-![Screenshot](./Screenshot%202026-10-18%20211557.png)
+![Time Screenshot](./screenshots/time.png)
 
 ### 404 Route
-
-![Screenshot](./Screenshot%202026-10-18%20211855.png )
+![404 Screenshot](./screenshots/404.png)
 ## Deployment
 
 The application can be deployed using a Node.js-compatible hosting service such as Render or Railway.
