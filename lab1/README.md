@@ -143,7 +143,7 @@ Configure the hosting service to install dependencies using `npm install` and st
 
 For deployment, the server should use the port provided by the hosting environment when available.
 
-**Live URL:** Not deployed yet.
+**Live URL:** https://backend-development-fundamentals.vercel.app/
 
 After successful deployment, replace this line with the actual public URL.
 
