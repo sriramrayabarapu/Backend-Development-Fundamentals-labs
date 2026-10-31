@@ -143,35 +143,35 @@ Example JSON:
 
 ### Server Running
 
-![Server Running](./Screenshots/01-server.png)
+![Server Running](./screenshots/01-server.png)
 
 ### GET All Books
 
-![GET All Books](./Screenshots/02-get-all-books.png)
+![GET All Books](./screenshots/02-get-all-books.png)
 
 ### GET Book by ID
 
-![GET Book by ID](./Screenshots/03-get-book-by-id.png)
+![GET Book by ID](./screenshots/03-get-book-by-id.png)
 
 ### GET Invalid Book ID
 
-![GET Invalid ID](./Screenshots/04-get-invalid-id.png)
+![GET Invalid ID](./screenshots/04-get-invalid-id.png)
 
 ### POST Add Book
 
-![POST Book](./Screenshots/05-post-book.png)
+![POST Book](./screenshots/05-post-book.png)
 
 ### PUT Update Book
 
-![PUT Book](./Screenshots/06-put-book.png)
+![PUT Book](./screenshots/06-put-book.png)
 
 ### DELETE Book
 
-![DELETE Book](./Screenshots/07-delete-book.png)
+![DELETE Book](./screenshots/07-delete-book.png)
 
 ### DELETE Verification
 
-![DELETE Verification](./Screenshots/08-delete-verification.png)
+![DELETE Verification](./screenshots/08-delete-verification.png)
 
 ## 9. Testing
 
