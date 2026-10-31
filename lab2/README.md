@@ -141,37 +141,26 @@ Example JSON:
 
 ## 8. Screenshots
 
-### Server Running
-
-![Server Running](./screenshots/01-server.png)
-
 ### GET All Books
 
-![GET All Books](./screenshots/02-get-all-books.png)
+![GET All Books](./screenshots/GET.png)
 
 ### GET Book by ID
 
-![GET Book by ID](./screenshots/03-get-book-by-id.png)
-
-### GET Invalid Book ID
-
-![GET Invalid ID](./screenshots/04-get-invalid-id.png)
+![GET Book by ID](./screenshots/GET1BOOK.png)
 
 ### POST Add Book
 
-![POST Book](./screenshots/05-post-book.png)
+![POST Book](./screenshots/POST.png)
 
 ### PUT Update Book
 
-![PUT Book](./screenshots/06-put-book.png)
+![PUT Book](./screenshots/PUT.png)
 
 ### DELETE Book
 
-![DELETE Book](./screenshots/07-delete-book.png)
+![DELETE Book](./screenshots/DELETE.png)
 
-### DELETE Verification
-
-![DELETE Verification](./screenshots/08-delete-verification.png)
 
 ## 9. Testing
 
