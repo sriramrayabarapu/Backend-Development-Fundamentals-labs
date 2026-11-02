@@ -13,6 +13,8 @@
 | Registration Number | 252U1R9136 |
 | Section | S-26 |
 
+Live Deployment Link:  https://backend-development-fundamentals-la-one.vercel.app/books
+
 ## Project Objective
 
 This lab demonstrates the development of a REST API using Node.js, Express.js and SQLite. It extends basic CRUD operations by implementing query parameters, searching, sorting, pagination, price filtering and input validation.
