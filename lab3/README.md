@@ -1,135 +1,278 @@
-    # Lab 3 – REST API with SQLite
+# Lab 3: REST API with SQLite – Query Parameters, Sorting, Pagination and Validation
+
+**Subject:** Backend Development Fundamentals  
+**Year/Term:** Year II, Term II  
+**University:** Aurora Deemed to be University  
+**Faculty:** Mr. Joel Prashanth D
 
 ## Student Details
 
-- **Name:** RAYABARAPU SRIRAM
-- **Registration Number:** 252U1R9136
-- **Section:** CSE(GENAI)2C&112
-- **Subject:** Backend Development Fundamentals
-- **Lab:** Lab 3 – REST API with SQLite
+| Field | Details |
+|---|---|
+| Name | RAYABARAPU SRIRAM |
+| Registration Number | 252U1R9136 |
+| Section | S-26 |
 
----
+## Project Objective
 
-## 1. Objective
+This lab demonstrates the development of a REST API using Node.js, Express.js and SQLite. It extends basic CRUD operations by implementing query parameters, searching, sorting, pagination, price filtering and input validation.
 
-To develop a REST API using Node.js, Express.js and SQLite. This project implements CRUD operations along with query parameters, sorting, pagination, price filtering and input validation.
+The application allows users to create, retrieve, update and delete book records stored in an SQLite database.
 
-## 2. Technologies Used
+The project also includes error handling, HTTP status codes and parameterized SQL queries to improve data safety and reliability.
+
+## Technologies Used
 
 - Node.js
 - Express.js
 - SQLite
-- JavaScript
+- SQLite3
+- JavaScript (CommonJS)
+- npm
 - Thunder Client
-- Visual Studio Code
+- HTTP methods and JSON responses
 
-## 3. Project Structure
+## Project Folder Structure
 
 ```text
-LAB3/
-│
-├── Screenshots/
-│   ├── GET.png
-│   ├── GET1BOOK.png
-│   ├── POST.png
-│   ├── PUT.png
-│   └── DELETE.png
-│
-├── node_modules/
+lab3/
 ├── app.js
 ├── database.js
 ├── books.db
 ├── package.json
 ├── package-lock.json
-└── README.md
+├── README.md
+└── Screenshots/
+    ├── GET.png
+    ├── GET1BOOK.png
+    ├── POST.png
+    ├── PUT.png
+    └── DELETE.png
 ```
 
-## 4. Installation and Setup
+## Installation and Execution
 
-**Step 1: Open the project folder**
+### Prerequisites
 
-Open the LAB3 folder in Visual Studio Code.
+- Node.js and npm installed on the computer.
+- Visual Studio Code or Antigravity editor.
+- SQLite database support.
+- Thunder Client extension for API testing.
 
-**Step 2: Install dependencies**
+### Install Dependencies
 
-Run the following command in the terminal:
+Open a terminal in the project directory and run:
 
 ```bash
 npm install
 ```
 
-**Step 3: Start the server**
+### Run the Application
+
+Start the server using:
 
 ```bash
 npm start
 ```
 
-The server runs at:
+Alternatively, run:
 
-```text
-http://localhost:3000
+```bash
+node app.js
 ```
 
-## 5. Database Details
+The server runs on port 3000 by default.
 
-**Database Name:** `books.db`
+Expected server message:
 
-**Table Name:** `book`
+```text
+Server running at http://localhost:3000/
+```
 
-### Table Schema
+The API can be tested using Thunder Client or another API testing tool.
+
+## Database Structure
+
+The project uses an SQLite database named `books.db`.
+
+The database contains a table named `book` with the following columns:
 
 | Column | Data Type | Description |
 |---|---|---|
-| id | INTEGER | Primary key with auto increment |
+| id | INTEGER | Primary key with auto-increment |
 | title | TEXT | Book title |
-| author | TEXT | Book author |
+| author | TEXT | Author name |
 | price | REAL | Book price |
 | pages | INTEGER | Number of pages |
 
-## 6. API Endpoints
+The table is created automatically when the application starts if it does not already exist.
 
-The following REST API endpoints are implemented:
+## API Endpoints
 
-| HTTP Method | Endpoint | Description |
-|---|---|---|
-| GET | `/books` | Retrieve all books |
-| GET | `/books/:bookId` | Retrieve a book by ID |
-| POST | `/books` | Add a new book |
-| PUT | `/books/:bookId` | Update an existing book |
-| DELETE | `/books/:bookId` | Delete a book |
+| HTTP Method | Path | Description | Expected Status Code |
+|---|---|---|---|
+| GET | `/books` | Retrieves books with search, sorting, pagination and price filters | 200 |
+| GET | `/books/:bookId` | Retrieves a specific book by ID | 200 / 404 |
+| POST | `/books` | Adds a new book | 201 |
+| PUT | `/books/:bookId` | Updates an existing book | 200 / 400 / 404 |
+| DELETE | `/books/:bookId` | Deletes a book by ID | 200 / 404 |
 
-## 7. Query Parameters
+## Query Parameters
 
 The GET `/books` endpoint supports the following query parameters:
 
-| Parameter | Description |
-|---|---|
-| `search_q` | Search books by title |
-| `order_by` | Sort by id, title, author, price or pages |
-| `order` | Sort in ASC or DESC order |
-| `limit` | Maximum number of records to retrieve |
-| `offset` | Number of records to skip |
-| `min_price` | Filter books by minimum price |
-| `max_price` | Filter books by maximum price |
+| Parameter | Description | Example |
+|---|---|---|
+| search_q | Searches books by title | `search_q=Atomic` |
+| order_by | Sorts using an allowed column | `order_by=price` |
+| order | Sorting direction (ASC or DESC) | `order=DESC` |
+| limit | Maximum number of records | `limit=5` |
+| offset | Number of records to skip | `offset=0` |
+| min_price | Minimum book price | `min_price=200` |
+| max_price | Maximum book price | `max_price=500` |
 
-### Example Request
+### Example Requests
+
+Retrieve all books:
 
 ```text
-http://localhost:3000/books?search_q=Atomic&order_by=price&order=ASC&limit=5&offset=0
+http://localhost:3000/books
 ```
 
-## 8. Input Validation
+Retrieve a specific book:
 
-The API includes validation to handle invalid inputs.
+```text
+http://localhost:3000/books/1
+```
 
-- Title and author are required.
+Search books by title:
+
+```text
+http://localhost:3000/books?search_q=Atomic
+```
+
+Sort books by price in descending order:
+
+```text
+http://localhost:3000/books?order_by=price&order=DESC
+```
+
+Retrieve books with pagination:
+
+```text
+http://localhost:3000/books?limit=5&offset=0
+```
+
+Filter books by price:
+
+```text
+http://localhost:3000/books?min_price=200&max_price=500
+```
+
+Combine search, sorting, pagination and price filters:
+
+```text
+http://localhost:3000/books?search_q=Atomic&order_by=price&order=ASC&limit=5&offset=0&min_price=200&max_price=500
+```
+
+## CRUD Operations
+
+### 1. GET – Retrieve Books
+
+The GET method retrieves all books from the SQLite database. It also supports searching, sorting, pagination and price filtering.
+
+A separate GET endpoint retrieves a book using its ID.
+
+### 2. POST – Add a New Book
+
+The POST method inserts a new book into the database.
+
+Example JSON request body:
+
+```json
+{
+  "title": "Atomic Habits",
+  "author": "James Clear",
+  "price": 450,
+  "pages": 320
+}
+```
+
+Expected response:
+
+```json
+{
+  "message": "Book added successfully",
+  "bookId": 1
+}
+```
+
+Expected status code: `201 Created`
+
+### 3. PUT – Update a Book
+
+The PUT method updates an existing book using its ID.
+
+Example JSON request body:
+
+```json
+{
+  "title": "Atomic Habits Updated",
+  "author": "James Clear",
+  "price": 500,
+  "pages": 350
+}
+```
+
+Expected response:
+
+```json
+{
+  "message": "Book updated successfully"
+}
+```
+
+Expected status code: `200 OK`
+
+### 4. DELETE – Delete a Book
+
+The DELETE method removes a book from the database using its ID.
+
+Example request:
+
+```text
+DELETE http://localhost:3000/books/1
+```
+
+Expected response:
+
+```json
+{
+  "message": "Book deleted successfully"
+}
+```
+
+Expected status code: `200 OK`
+
+## Input Validation and Error Handling
+
+The application validates user input before performing database operations.
+
+The validation includes:
+
+- Book title must be a non-empty string.
+- Author name must be a non-empty string.
 - Price must be a valid finite number.
 - Pages must be a non-negative integer when provided.
-- Sorting and pagination parameters are validated.
+- Sorting columns must belong to the allowed column list.
+- Sorting order must be ASC or DESC.
+- Limit and offset must contain valid pagination values.
 - Minimum price cannot exceed maximum price.
-- Appropriate HTTP status codes are returned for errors.
+- A book that does not exist returns a 404 response.
 
-## 9. Screenshots
+The application uses parameterized SQL queries to help prevent SQL injection.
+
+## Screenshots
 
 ### GET – Retrieve All Books
 
@@ -151,23 +294,58 @@ The API includes validation to handle invalid inputs.
 
 ![DELETE Book](./Screenshots/DELETE.png)
 
-## 10. API Testing
+## Problems Faced and Solutions
 
-All five CRUD operations were tested using Thunder Client.
+| Problem | Solution |
+|---|---|
+| Connecting Node.js with SQLite | Used the `sqlite` and `sqlite3` packages. |
+| Creating and managing the database | Created the `book` table using SQL commands. |
+| Retrieving records using query parameters | Used `request.query` in Express. |
+| Implementing sorting safely | Used an allowlist of valid database columns and sorting directions. |
+| Implementing pagination | Used SQL `LIMIT` and `OFFSET`. |
+| Filtering books by price | Used minimum and maximum price conditions. |
+| Validating user input | Added validation checks before database operations. |
+| Handling missing book records | Returned an appropriate 404 response. |
+| Preventing SQL injection | Used parameterized SQL queries. |
 
-| Test Case | Expected Result | Status |
-|---|---|---|
-| GET all books | 200 OK | Passed |
-| GET book by ID | 200 OK | Passed |
-| POST new book | 201 Created | Passed |
-| PUT update book | 200 OK | Passed |
-| DELETE book | 200 OK | Passed |
-| GET deleted book | 404 Not Found | Passed |
+## Learning Outcomes
 
-## 11. Conclusion
+- Created a REST API using Node.js and Express.js.
+- Connected an Express application to an SQLite database.
+- Implemented GET, POST, PUT and DELETE operations.
+- Retrieved individual records using route parameters.
+- Implemented search functionality using query parameters.
+- Applied sorting using ASC and DESC.
+- Implemented pagination using LIMIT and OFFSET.
+- Added minimum and maximum price filtering.
+- Implemented input validation and error handling.
+- Used parameterized SQL queries.
+- Tested REST API endpoints using Thunder Client.
+- Learned to organize and upload a backend project to GitHub.
 
-Successfully developed and tested a REST API using Node.js, Express.js and SQLite.
+## Git Hygiene
 
-Implemented CRUD operations, query parameters, sorting, pagination, price filtering and input validation. Tested the API endpoints using Thunder Client and verified the responses.
+Create a `.gitignore` file in the project root with the following entries:
 
-This lab helped in understanding backend development, database connectivity and REST API implementation.
+```text
+node_modules/
+.env
+```
+
+Do not commit `node_modules`, `.env`, passwords, API keys or other secret information to GitHub.
+
+## GitHub Repository
+
+**Repository URL:**
+
+https://github.com/sriramrayabarapu/Backend-Development-Fundamentals
+
+**Lab 3 Folder:**
+
+https://github.com/sriramrayabarapu/Backend-Development-Fundamentals-labs/edit/main/lab3/README.md
+
+## Conclusion
+
+This lab provided practical experience in developing a REST API using Node.js, Express.js and SQLite. It strengthened understanding of CRUD operations, query parameters, searching, sorting, pagination, price filtering and input validation.
+
+The project demonstrates how backend applications manage database records and process client requests using REST API principles.
