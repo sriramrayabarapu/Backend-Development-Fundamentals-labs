@@ -338,7 +338,7 @@ Do not commit `node_modules`, `.env`, passwords, API keys or other secret inform
 
 **Repository URL:**
 
-https://github.com/sriramrayabarapu/Backend-Development-Fundamentals
+https://github.com/sriramrayabarapu/Backend-Development-Fundamentals-labs
 
 **Lab 3 Folder:**
 
