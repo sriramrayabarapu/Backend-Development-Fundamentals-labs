@@ -276,25 +276,35 @@ The application uses parameterized SQL queries to help prevent SQL injection.
 
 ## Screenshots
 
-### GET – Retrieve All Books
+### 1. Search Books by Title
+![Search Books by Title](./Screenshots/Search%20Books%20by%20Title.png)
 
-![GET All Books](./Screenshots/GET.png)
+### 2. Sort Books by Price
+![Sort Books by Price](./Screenshots/Sort%20Books%20by%20Price.png)
 
-### GET – Retrieve Book by ID
+### 3. Filter Books by Price Range
+![Filter Books by Price Range](./Screenshots/Filter%20Books%20by%20Price%20Range.png)
 
-![GET Book by ID](./Screenshots/GET1BOOK.png)
+### 4. Pagination
+![Pagination](./Screenshots/Pagination.png)
 
-### POST – Add a New Book
+### 5. Verify Deletion
+![Verify Deletion](./Screenshots/DELETE.png)
 
-![POST Book](./Screenshots/POST.png)
+### 6. Test Invalid POST Data
+![Test Invalid POST Data](./Screenshots/Test%20Invalid%20POST%20Data.png)
 
-### PUT – Update an Existing Book
+### 7. Test Invalid Sorting Order
+![Test Invalid Sorting Order](./Screenshots/Test%20Invalid%20Sorting%20Order.png)
 
-![PUT Book](./Screenshots/PUT.png)
+### 8. Test Invalid order_by Value
+![Test Invalid order_by Value](./Screenshots/Test%20Invalid%20order_by%20Value.png)
 
-### DELETE – Delete a Book
+### 9. Update a Non-Existing Book
+![Update a Non-Existing Book](./Screenshots/Update%20a%20Book.png)
 
-![DELETE Book](./Screenshots/DELETE.png)
+### 10. Delete a Non-Existing Book
+![Delete a Non-Existing Book](./Screenshots/Delete%20a%20Non-Existing%20Book.png)
 
 ## Problems Faced and Solutions
 
