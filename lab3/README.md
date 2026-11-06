@@ -276,34 +276,49 @@ The application uses parameterized SQL queries to help prevent SQL injection.
 
 ## Screenshots
 
-### 1. Search Books by Title
+### 1. GET All Books
+![GET All Books](./Screenshots/GET.png)
+
+### 2. GET Book by ID
+![GET Book by ID](./Screenshots/GET1BOOK.png)
+
+### 3. POST - Add a New Book
+![POST Book](./Screenshots/POST.png)
+
+### 4. PUT - Update a Book
+![PUT Book](./Screenshots/PUT.png)
+
+### 5. DELETE - Delete a Book
+![DELETE Book](./Screenshots/DELETE.png)
+
+### 6. Search Books by Title
 ![Search Books by Title](./Screenshots/Search%20Books%20by%20Title.png)
 
-### 2. Sort Books by Price
+### 7. Sort Books by Price
 ![Sort Books by Price](./Screenshots/Sort%20Books%20by%20Price.png)
 
-### 3. Filter Books by Price Range
+### 8. Filter Books by Price Range
 ![Filter Books by Price Range](./Screenshots/Filter%20Books%20by%20Price%20Range.png)
 
-### 4. Pagination
+### 9. Pagination
 ![Pagination](./Screenshots/Pagination.png)
 
-### 5. Verify Deletion
+### 10. Verify Deletion
 ![Verify Deletion](./Screenshots/DELETE.png)
 
-### 6. Test Invalid POST Data
+### 11. Test Invalid POST Data
 ![Test Invalid POST Data](./Screenshots/Test%20Invalid%20POST%20Data.png)
 
-### 7. Test Invalid Sorting Order
+### 12. Test Invalid Sorting Order
 ![Test Invalid Sorting Order](./Screenshots/Test%20Invalid%20Sorting%20Order.png)
 
-### 8. Test Invalid order_by Value
+### 13. Test Invalid order_by Value
 ![Test Invalid order_by Value](./Screenshots/Test%20Invalid%20order_by%20Value.png)
 
-### 9. Update a Non-Existing Book
+### 14. Update a Non-Existing Book
 ![Update a Non-Existing Book](./Screenshots/Update%20a%20Book.png)
 
-### 10. Delete a Non-Existing Book
+### 15. Delete a Non-Existing Book
 ![Delete a Non-Existing Book](./Screenshots/Delete%20a%20Non-Existing%20Book.png)
 
 ## Problems Faced and Solutions
